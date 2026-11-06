@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IBD3D Cheat Code Book - Prem Gaming</title>
+<style>
+body {
+  background:#101020;
+  color:white;
+  font-family:Arial,sans-serif;
+  margin:0;
+  padding:20px;
+}
+header {
+  text-align:center;
+  color:orange;
+}
+h1 {font-size:30px}
+h2 {color:#ffb000}
+input {
+  width:90%;
+  padding:14px;
+  border-radius:10px;
+  font-size:16px;
+}
+.card {
+  background:#202039;
+  padding:15px;
+  margin:15px 0;
+  border-radius:12px;
+}
+.item {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:9px;
+  border-bottom:1px solid #444;
+}
+button {
+  background:orange;
+  border:0;
+  padding:8px 12px;
+  border-radius:7px;
+  font-weight:bold;
+}
+code {color:yellow;font-size:16px}
+footer {
+  text-align:center;
+  color:orange;
+  margin-top:30px;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>📕 IBD3D CHEAT CODE BOOK</h1>
+<h3>👑 PREM GAMING 👑</h3>
+<p>Indian Bikes Driving 3D</p>
+</header>
+
+<input id="search" placeholder="🔍 Search Cheat Code..." oninput="searchCodes()">
+
+<div id="book"></div>
+
+<footer>
+🔥 MADE BY PREM GAMING 🔥
+</footer>
+
+<script>
+const data = {
+"🚗 CARS": {
+"Bugatti":"8012",
+"Mercedes AMG":"1391",
+"Lamborghini":"3333",
+"Ferrari":"8811",
+"Mustang":"8123",
+"Supra":"2244",
+"Thar":"9191",
+"Fortuner":"1000",
+"Rolls Royce":"2000",
+"Porsche":"4000",
+"Audi":"500",
+"BMW G-Wagon":"6666",
+"Range Rover":"6666",
+"Bugatti Chiron":"4444",
+"Bugatti V2":"800",
+"Scorpio Classic":"333",
+"Scorpio S11":"444",
+"Bolero":"3100",
+"Innova":"1207",
+"Defender":"0002",
+"Endeavour":"2020",
+"Land Cruiser":"1820",
+"Jeep":"3111",
+"Thar Modified":"9090"
+},
+"🏍️ BIKES": {
+"Yamaha VMAX":"999",
+"Yamaha FZ10":"888",
+"Yamaha R15":"0015",
+"Ducati Diavel":"777",
+"Benelli TNT":"666",
+"Duke 1290":"8888",
+"Duke 200":"7777",
+"Kawasaki Ninja H2R":"3000",
+"Hayabusa":"7000",
+"Pulsar RS200":"5000",
+"Splendor":"9000",
+"Tron Bike":"6000",
+"Ghost Raider Bike":"5555",
+"Royal Enfield Bullet":"9999",
+"ZX10R":"400",
+"New KTM":"1190",
+"Apache":"4050"
+},
+"🚁 VEHICLES": {
+"Helicopter":"8000",
+"Police Helicopter":"8001",
+"Plane":"555",
+"UFO":"0606",
+"Boat":"3001",
+"JCB":"6677",
+"Fire Truck":"606",
+"Truck":"1212",
+"Truck with Trailer":"01212",
+"Robot AI":"3380",
+"Jet Pack":"320",
+"Jet Pack Mini":"330",
+"Tractor":"5643",
+"Rickshaw":"8370",
+"Cycle":"1111",
+"Hot Air Balloon":"0601",
+"Tank":"4040",
+"Monster Truck":"0 + Car code"
+},
+"🦖 ANIMALS": {
+"Dragon":"0701",
+"Dog":"600",
+"Horse":"200",
+"Elephant":"10",
+"Buffalo":"6",
+"T-Rex":"51",
+"Velociraptor":"50",
+"Spino":"52",
+"Brachiosaurus":"53",
+"Zombie":"2030",
+"Dino":"5050"
+},
+"⚡ POWERS": {
+"Infinity Health":"9129",
+"Night Mode":"9",
+"Super Jump":"1215",
+"Ultra Super Jump":"1216",
+"Skyfall":"1120",
+"Slow Motion":"1112",
+"Moon Gravity":"7112",
+"More NPC":"12345",
+"More Traffic":"54321",
+"Fuel Tank":"00",
+"Gas Tank":"0"
+}
+};
+
+function render(){
+ const q=document.getElementById("search").value.toLowerCase();
+ const book=document.getElementById("book");
+ book.innerHTML="";
+ for(const [category,codes] of Object.entries(data)){
+  let items="";
+  for(const [name,code] of Object.entries(codes)){
+   if((name+" "+code).toLowerCase().includes(q)){
+    items+=`<div class="item">
+    <span>${name} <code>${code}</code></span>
+    <button onclick="copyCode('${code}')">COPY</button>
+    </div>`;
+   }
+  }
+  if(items) book.innerHTML+=`<section class="card"><h2>${category}</h2>${items}</section>`;
+ }
+}
+function searchCodes(){render()}
+function copyCode(code){
+ navigator.clipboard.writeText(code)
+ .then(()=>alert("Code Copied: "+code))
+ .catch(()=>alert("Code: "+code));
+}
+render();
+</script>
+</body>
+</html>
